@@ -69,6 +69,12 @@ app.delete("/api/patient/:id", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://healthcare-frontend-two-pied.vercel.app/"
+  ]
+}));
 
 app.delete("/api/volunteer/:id", async (req, res) => {
   try {
