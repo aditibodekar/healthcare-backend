@@ -58,8 +58,10 @@ app.get("/api/volunteers", async (req, res) => {
   res.json(data);
 });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("Server running");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
 app.delete("/api/patient/:id", async (req, res) => {
   try {
